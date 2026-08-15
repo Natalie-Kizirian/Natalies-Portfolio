@@ -1,109 +1,71 @@
-import ContactPage from "./ContactPage";
 import { useState } from "react";
-import InfoCard from "./InfoCard";
+import ContactCard from "./Cards/ContactCard";
+import InfoContainer from "./InfoContainer";
+import AboutCard from "./Cards/AboutCard";
 import SectionTitle from "./SectionTitle";
 function RightCard({ activeTab }) {
-  const infoRows = [
-    { label: "ROLE", value: "Junior Front-end Developer" },
-    { label: "EDUCATION", value: "IT Applications — Web Design & Development" },
-    { label: "AVAILABILITY", value: "Open to opportunities" },
-    { label: "LANGUAGES", value: "Greek / English" },
-    { label: "LOCATION", value: "Athens, Greece" },
-    { label: "EXPERIENCE", value: "1+ year building projects" },
-  ];
-  const skillCategories = [
-    {
-      title: "FRONT END",
-      skills: ["HTML5", "CSS3", "JAVASCRIPT (ES6+)", "REACT", "TAILWIND CSS"],
-    },
-    {
-      title: "DESIGN",
-      skills: ["FIGMA", "RESPONSIVE DESIGN", "UI/UX DESIGN"],
-    },
-    {
-      title: "TOOLS",
-      skills: ["GIT & GITHUB", "VS CODE"],
-    },
-    {
-      title: "IN PROGRESS",
-      skills: ["TYPESCRIPT"],
-    },
-  ];
-
   return (
     <>
       <div className="flex w-full flex-col gap-4 lg:h-145 lg:gap-0">
-        <InfoCard visible={activeTab === "about"}>
-          {/* ABOUT ME */}
-          <div>
+        {/* ABOUT */}
+        <InfoContainer visible={activeTab === "about"}>
+          <div
+            className="flex scroll-mt-35 flex-col gap-2 text-white"
+            id="about"
+          >
             <SectionTitle>about</SectionTitle>
-            <div className="flex flex-col gap-2 pb-3 lg:text-lg">
-              <p className="text-off-white text-lg font-bold">
-                Hello! I’m Natalie Kizirian.
-              </p>
-              <p className="text-off-white font-medium">
-                I'm an IT student focusing on Front-end Development, based in
-                Athens and looking for opportunities to grow and work in an
-                international team. I enjoy building clean and responsive
-                websites. When I'm not coding, you'll find me exploring new
-                UI/UX ideas and designing websites and applications.
-              </p>
-            </div>
-            {infoRows.map((row) => (
-              <div
-                key={row.label}
-                className="border-brand-gradient mb-3 flex justify-between gap-3 border-b-2 md:text-lg"
-              >
-                <p className="shrink-0">{row.label}</p>
-                <p className="text-off-white text-end">{row.value}</p>
-              </div>
-            ))}
+            <AboutCard />
           </div>
-
-          {/* SKILLS  */}
-          <div>
-            <SectionTitle>skills</SectionTitle>
-
-            <div className="grid grid-cols-2 gap-6">
-              {skillCategories.map((category) => (
-                <div key={category.title} className="w-full space-y-1">
-                  <p className="text-md font-semibold md:text-lg">
-                    {category.title}
-                  </p>
-                  {category.skills.map((skill) => (
-                    <p
-                      key={skill}
-                      className="text-off-white text-xs md:text-lg"
-                    >
-                      {skill}
-                    </p>
-                  ))}
-                </div>
-              ))}
-  
-            </div>
+        </InfoContainer>
+        {/* What I Focus On */}
+        {/* <div>
+        <h2 className="mb-2 text-xl font-bold">What I Focus On</h2>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="border-primary space-y-1 rounded-lg border bg-black p-3">
+            <LuCode className="text-brand text-lg" />
+            <p className="text-xs font-semibold">Web Development</p>
+            <p className="text-[11px] text-gray-400">
+              Clean, responsive frontend layouts.
+            </p>
           </div>
-        </InfoCard>
+          <div className="border-primary space-y-1 rounded-lg border bg-black p-3">
+            <LuLayoutPanelLeft className="text-brand text-lg" />
+            <p className="text-xs font-semibold">UI/UX Implementation</p>
+            <p className="text-[11px] text-gray-400">
+              Figma design to code transformation.
+            </p>
+          </div>
+        </div>
+      </div> */}
 
-        <InfoCard visible={activeTab === "projects"}>
-          <div>
+        <InfoContainer visible={activeTab === "projects"}>
+          <div
+            id="projects"
+            className="flex scroll-mt-35 flex-col gap-2 text-white"
+          >
             <SectionTitle>projects</SectionTitle>
           </div>
-        </InfoCard>
-        <InfoCard visible={activeTab === "uiux"}>
-          <div>
-            <SectionTitle>ui/ux designs</SectionTitle>
+        </InfoContainer>
+        <InfoContainer visible={activeTab === "uiux"}>
+          <div
+            id="uiux"
+            className="flex scroll-mt-35 flex-col gap-2 text-white"
+          >
+            <SectionTitle>ui/ux design</SectionTitle>
           </div>
-        </InfoCard>
+        </InfoContainer>
 
         {/* CONTACT */}
-        <InfoCard visible={activeTab === "contact"}>
-          <div className="flex flex-col gap-2  text-white">
+        <InfoContainer visible={activeTab === "contact"}>
+          <div
+            id="contact"
+            className="flex scroll-mt-35 flex-col gap-2 text-white"
+          >
             <SectionTitle>contact</SectionTitle>
 
-            <ContactPage />
+            <ContactCard />
           </div>
-        </InfoCard>
+        </InfoContainer>
       </div>
     </>
   );

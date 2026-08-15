@@ -1,4 +1,4 @@
-function InfoCard({ children, className = "", visible = true }) {
+function InfoContainer({ children, className = "", visible = true }) {
   return (
     <div
       className={`bg-bg-dark flex w-full flex-col gap-8 overflow-hidden p-3 text-white transition-all duration-500 md:p-5 ${
@@ -11,4 +11,4 @@ function InfoCard({ children, className = "", visible = true }) {
     </div>
   );
 }
-export default InfoCard;
+export default InfoContainer;

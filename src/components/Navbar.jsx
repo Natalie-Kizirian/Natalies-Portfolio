@@ -14,14 +14,14 @@ function Navbar({ activeTab, setActiveTab }) {
   ];
 
   const buttonStyles =
-    "border-brand-gradient bg-bg-dark flex flex-1 cursor-pointer flex-col items-center justify-center gap-1 border-l  lg:px-9 p-3 text-center font-semibold uppercase transition-all duration-500 md:aspect-square md:flex-none md:border-b lg:border-l-0  hover:bg-secondary-dark/20";
+    "border-brand-gradient bg-bg-dark flex flex-1 cursor-pointer flex-col items-center justify-center  border-l  p-3 text-center font-semibold uppercase transition-all duration-500 md:aspect-square md:flex-none md:border-b lg:border-l-0  hover:bg-secondary-dark/20";
   return (
     <div className="fixed top-0 z-40 flex w-full flex-col self-start text-white md:static md:h-auto md:w-17 md:flex-col">
       {/* 1st Bar Mobile*/}
       <div className="border-brand-gradient bg-bg-dark flex justify-between border-b p-3 md:hidden">
         <div className="flex items-center gap-2 text-sm">
           <img
-            src="#"
+            src="https://avatars.githubusercontent.com/u/200575349?s=400&u=8e99838859cf4ca384395d984593d030054e36ec&v=4"
             alt="Natalie Kizirian"
             className="h-10 w-10 rounded-full border border-[#3a3a42] bg-white object-cover"
           />
@@ -51,10 +51,15 @@ function Navbar({ activeTab, setActiveTab }) {
         {tabs.map(({ id, label, Icon }) => (
           <button
             key={id}
-            className={`${buttonStyles} ${
-              isOpen ? "md:max-h-16" : "overflow-hidden md:max-h-0 md:py-0 "
-            } ${activeTab === id ? "text-primary" : "hover:text-primary text-white"}`}
-            onClick={() => setActiveTab(id)}
+            onClick={() => {
+              setActiveTab(id);
+              document
+                .getElementById(id)
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className={`${activeTab === id ? "text-primary" : "hover:text-primary text-white"} ${buttonStyles} bg-bg-dark flex flex-col items-center gap-2 ${
+              isOpen ? "md:max-h-20" : "overflow-hidden md:max-h-0 md:py-0"
+            }`}
           >
             <Icon />
             <span className="text-xs">{label}</span>

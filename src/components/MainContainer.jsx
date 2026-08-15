@@ -1,14 +1,14 @@
-import MainCard from "./MainCard";
+import LeftCard from "./LeftCard";
 import RightCard from "./RightCard";
-function AboutPage({activeTab}) {
+function MainContainer({activeTab , setActiveTab}) {
   return (
     <>
       <div className="mx-auto flex w-full flex-col items-center lg:flex-row">
-        <MainCard />
+        <LeftCard activeTab={activeTab} setActiveTab={setActiveTab} />
         <RightCard activeTab={activeTab}/>
       </div>
     </>
   );
 }
-export default AboutPage;
+export default MainContainer;
 
