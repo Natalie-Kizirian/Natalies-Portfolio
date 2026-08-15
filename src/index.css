@@ -10,8 +10,11 @@
   --color-muted: #9184c2;
   --color-black: #18181b;
   --color-bg-dark: #222226;
+  --color-gray-dark:#37373E;
+  --color-gray-dark-hover:#43434C;
 }
 @utility border-brand-gradient {
+  
   border-image: linear-gradient(60deg, var(--color-secondary), transparent) 1;
 }
 @utility bg-brand-gradient {
@@ -21,11 +24,14 @@
     transparent
   );
 }
+
 body {
   background-color: var(--color-black);
   font-family: "Jura", sans-serif;
   max-height: 100vh;
+  /* background-image: url("https://i.pinimg.com/736x/8c/45/c9/8c45c984350611b02f4f168c5146eb60.jpg"); */
 }
+
 .button-primary {
   display: flex;
   flex: 1 1 0%;

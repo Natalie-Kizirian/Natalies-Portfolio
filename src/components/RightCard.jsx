@@ -1,4 +1,8 @@
-function RightCard() {
+import ContactPage from "./ContactPage";
+import { useState } from "react";
+import InfoCard from "./InfoCard";
+import SectionTitle from "./SectionTitle";
+function RightCard({ activeTab }) {
   const infoRows = [
     { label: "ROLE", value: "Junior Front-end Developer" },
     { label: "EDUCATION", value: "IT Applications — Web Design & Development" },
@@ -25,63 +29,81 @@ function RightCard() {
       skills: ["TYPESCRIPT"],
     },
   ];
+
   return (
     <>
-      <div className="bg-bg-dark flex w-full flex-col gap-8 p-3 text-white md:min-h-125 md:p-8 lg:max-h-90 lg:overflow-y-scroll ">
-        {/* ABOUT ME */}
-        <div>
-          <div className="relative w-full">
-            <h1 className="border-brand-gradient relative z-20 border-b-2 text-xl font-bold mb-2 ">
-              ABOUT ME
-            </h1>
-            <div className="bg-brand-gradient absolute -top-1 -left-2 z-10 h-5 w-5 rounded-full" />
-          </div>
-          <div className="flex flex-col gap-2 pb-3 lg:text-lg">
-            <p className="text-off-white text-lg font-bold">
-              Hello! I’m Natalie Kizirian.
-            </p>
-            <p className="text-off-white font-medium">
-              I'm an IT student focusing on Front-end Development, based in
-              Athens and looking for opportunities to grow and work in an
-              international team. I enjoy building clean and responsive
-              websites. When I'm not coding, you'll find me exploring new UI/UX
-              ideas and designing websites and applications.
-            </p>
-          </div>
-          {infoRows.map((row) => (
-            <div
-              key={row.label}
-              className="border-brand-gradient mb-3 flex justify-between gap-3 border-b-2 md:text-lg"
-            >
-              <p className="shrink-0">{row.label}</p>
-              <p className="text-off-white text-end">{row.value}</p>
+      <div className="flex w-full flex-col gap-4 lg:h-145 lg:gap-0">
+        <InfoCard visible={activeTab === "about"}>
+          {/* ABOUT ME */}
+          <div>
+            <SectionTitle>about</SectionTitle>
+            <div className="flex flex-col gap-2 pb-3 lg:text-lg">
+              <p className="text-off-white text-lg font-bold">
+                Hello! I’m Natalie Kizirian.
+              </p>
+              <p className="text-off-white font-medium">
+                I'm an IT student focusing on Front-end Development, based in
+                Athens and looking for opportunities to grow and work in an
+                international team. I enjoy building clean and responsive
+                websites. When I'm not coding, you'll find me exploring new
+                UI/UX ideas and designing websites and applications.
+              </p>
             </div>
-          ))}
-        </div>
-        {/* SKILLS  */}
-        <div>
-          <div className="relative w-full">
-            <h1 className="border-brand-gradient relative z-20 border-b-2 text-xl font-bold mb-2">
-              SKILLS
-            </h1>
-            <div className="bg-brand-gradient absolute -top-1 -left-2 z-10 h-5 w-5 rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-2 gap-6">
-            {skillCategories.map((category) => (
-              <div key={category.title} className="w-full space-y-1">
-                <p className="text-md font-semibold md:text-lg">{category.title}</p>
-                {category.skills.map((skill) => (
-                  <div>
-                    <p key={skill} className="text-xs md:text-lg">
-                      {skill}
-                    </p>
-                  </div>
-                ))}
+            {infoRows.map((row) => (
+              <div
+                key={row.label}
+                className="border-brand-gradient mb-3 flex justify-between gap-3 border-b-2 md:text-lg"
+              >
+                <p className="shrink-0">{row.label}</p>
+                <p className="text-off-white text-end">{row.value}</p>
               </div>
             ))}
           </div>
-        </div>
+
+          {/* SKILLS  */}
+          <div>
+            <SectionTitle>skills</SectionTitle>
+
+            <div className="grid grid-cols-2 gap-6">
+              {skillCategories.map((category) => (
+                <div key={category.title} className="w-full space-y-1">
+                  <p className="text-md font-semibold md:text-lg">
+                    {category.title}
+                  </p>
+                  {category.skills.map((skill) => (
+                    <p
+                      key={skill}
+                      className="text-off-white text-xs md:text-lg"
+                    >
+                      {skill}
+                    </p>
+                  ))}
+                </div>
+              ))}
+  
+            </div>
+          </div>
+        </InfoCard>
+
+        <InfoCard visible={activeTab === "projects"}>
+          <div>
+            <SectionTitle>projects</SectionTitle>
+          </div>
+        </InfoCard>
+        <InfoCard visible={activeTab === "uiux"}>
+          <div>
+            <SectionTitle>ui/ux designs</SectionTitle>
+          </div>
+        </InfoCard>
+
+        {/* CONTACT */}
+        <InfoCard visible={activeTab === "contact"}>
+          <div className="flex flex-col gap-2  text-white">
+            <SectionTitle>contact</SectionTitle>
+
+            <ContactPage />
+          </div>
+        </InfoCard>
       </div>
     </>
   );
