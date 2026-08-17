@@ -29,12 +29,12 @@ function AboutCard() {
 
   return (
     <>
-      <div className="flex flex-col gap-6  lg:text-lg">
+      <div className="flex flex-col gap-6 lg:text-lg">
         <div>
-          <p className="text-off-white pb-2 font-bold">
+          <p className="text-body pb-2 font-bold">
             Hello! I’m Natalie Kizirian.
           </p>
-          <p className="text-off-white font-medium">
+          <p className="text-body font-medium">
             I'm an IT student focusing on Front-end Development, based in Athens
             and looking for opportunities to grow and work in an international
             team. I enjoy building clean and responsive websites. When I'm not
@@ -50,7 +50,7 @@ function AboutCard() {
               className="border-brand-gradient mb-3 flex justify-between gap-3 border-b-2 text-sm md:text-lg"
             >
               <p className="shrink-0 font-semibold">{row.label}</p>
-              <p className="text-off-white text-end">{row.value}</p>
+              <p className="text-body text-end">{row.value}</p>
             </div>
           ))}
         </div>
@@ -65,7 +65,7 @@ function AboutCard() {
                 {category.title}
               </p>
               {category.skills.map((skill) => (
-                <p key={skill} className="text-off-white text-xs md:text-lg">
+                <p key={skill} className="text-body text-xs md:text-lg">
                   {skill}
                 </p>
               ))}

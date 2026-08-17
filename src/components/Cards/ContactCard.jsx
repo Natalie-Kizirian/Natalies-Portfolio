@@ -25,10 +25,10 @@ function ContactCard() {
 
   if (showThankYou) {
     return (
-      <div className="space-y-3 rounded-xl border border-neutral-800 bg-neutral-900/40 p-8 text-center">
+      <div className="border-gray-border bg-surface space-y-3 rounded-xl border p-8 text-center">
         <LuCircleCheck className="mx-auto text-4xl text-green-400" />
         <h3 className="text-lg font-bold">Thank you!</h3>
-        <p className="text-xs text-gray-400">
+        <p className="text-body text-sm">
           Your message has been sent successfully. I'll get back to you soon!
         </p>
       </div>
@@ -47,10 +47,10 @@ function ContactCard() {
     }
   };
   return (
-    <div className="flex flex-col gap-6 ">
+    <div className=" flex flex-col gap-6">
       <div className="flex flex-col gap-2">
         <h2 className="text-xl font-bold">Let's Connect!</h2>
-        <p className="text-off-white text-sm leading-relaxed">
+        <p className="text-body text-sm leading-relaxed">
           If you have any questions, feedback about my projects, or an
           opportunity to discuss, feel free to reach out.
         </p>
@@ -58,14 +58,14 @@ function ContactCard() {
       <div>
         {/* MAIL */}
         <div className="space-y-2 rounded-xl">
-          <span className="text-off-white flex items-center gap-1.5 text-xs font-semibold uppercase">
+          <span className="text-body flex items-center gap-1.5 text-xs font-semibold uppercase">
             <LuMail /> Direct Email
           </span>
-          <div className="bg-bg-black border-muted flex items-center justify-between gap-2 rounded-lg border p-2.5">
+          <div className="border-gray-border flex items-center justify-between gap-2 rounded-lg border bg-black p-2.5">
             <span className="truncate font-mono text-xs">{myEmail}</span>
             <button
               onClick={handleCopy}
-              className="bg-gray-dark hover:bg-gray-dark-hover flex cursor-pointer items-center gap-1 rounded px-3 py-1.5 text-xs transition-colors"
+              className="bg-gray-border hover:bg-gray-border/60 flex cursor-pointer items-center gap-1 rounded px-3 py-1.5 text-xs transition-colors"
             >
               {failed ? (
                 <LuX className="text-red-400" />
@@ -84,10 +84,10 @@ function ContactCard() {
         noValidate
         key={state.succeeded}
         onSubmit={handleSubmit}
-        className="border-gray-dark shadow-xl bg-bg-black space-y-4 rounded-xl border p-4"
+        className="border-gray-border space-y-4 rounded-xl border p-4 shadow-xl lg:mx-15"
       >
         <div>
-          <label className="text-off-white mb-1 block text-xs font-medium md:text-sm">
+          <label className="text-body mb-1 block text-xs font-medium md:text-sm">
             NAME
           </label>
           <input
@@ -95,12 +95,12 @@ function ContactCard() {
             name="name"
             required
             placeholder="Your Name"
-            className="focus:border-brand border-gray-dark-hover bg-gray-dark w-full rounded-lg border px-3 py-2 text-xs focus:outline-none md:text-sm"
+            className="focus:border-primary border-gray-border bg-surface w-full rounded-lg border px-3 py-2 text-xs focus:outline-none md:text-sm"
           />
         </div>
 
         <div>
-          <label className="text-off-white mb-1 block text-xs font-medium md:text-sm">
+          <label className="text-body mb-1 block text-xs font-medium md:text-sm">
             EMAIL
           </label>
           <input
@@ -108,12 +108,12 @@ function ContactCard() {
             name="email" // Formspree
             required
             placeholder="your@email.com"
-            className="focus:border-brand border-gray-dark-hover bg-gray-dark w-full rounded-lg border px-3 py-2 text-xs focus:outline-none md:text-sm"
+            className="focus:border-primary border-gray-border bg-surface w-full rounded-lg border px-3 py-2 text-xs focus:outline-none md:text-sm"
           />
         </div>
 
         <div>
-          <label className="text-off-white mb-1 block text-xs font-medium md:text-sm">
+          <label className="text-body mb-1 block text-xs font-medium md:text-sm">
             MESSAGE
           </label>
           <textarea
@@ -121,13 +121,13 @@ function ContactCard() {
             required
             rows={5}
             placeholder="Write your message..."
-            className="focus:border-brand border-gray-dark-hover bg-gray-dark w-full resize-none rounded-lg border px-3 py-2 text-xs focus:outline-none md:text-sm"
+            className="focus:border-primary border-gray-border bg-surface w-full resize-none rounded-lg border px-3 py-2 text-xs focus:outline-none md:text-sm"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-secondary-dark flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg p-2.5 text-xs font-semibold transition-opacity hover:opacity-90"
+          className="text-primary border-primary hover:bg-primary/10 lg:text-md flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border bg-black p-2 text-xs font-extrabold"
         >
           {state.submitting ? "Sending..." : "Send Message"} <LuSend />
         </button>
