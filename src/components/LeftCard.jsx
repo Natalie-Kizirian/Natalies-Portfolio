@@ -38,7 +38,7 @@ function LeftCard({ activeTab, setActiveTab }) {
             <a
               href="https://github.com/Natalie-Kizirian"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="hover:text-primary-hover transition-colors"
             >
               <FaGithub />
@@ -47,7 +47,7 @@ function LeftCard({ activeTab, setActiveTab }) {
             <a
               href="https://www.linkedin.com/in/natalie-kizirian-867706355/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="hover:text-primary-hover transition-colors"
             >
               <FaLinkedinIn />
@@ -57,7 +57,7 @@ function LeftCard({ activeTab, setActiveTab }) {
       </div>
 
       {/* Contact */}
-      <div className="border-brand-gradient text-primary flex items-center border-t bg-black ">
+      <div className="border-brand-gradient text-primary flex items-center border-t bg-black">
         <button
           onClick={() => {
             setActiveTab("contact");

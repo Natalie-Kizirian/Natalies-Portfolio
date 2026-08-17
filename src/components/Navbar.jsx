@@ -8,6 +8,7 @@ function Navbar({ activeTab, setActiveTab }) {
   const [isOpen, setIsOpen] = useState(false);
   const tabs = [
     { id: "about", label: "about", Icon: LuUser },
+    { id: "skills", label: "skills", Icon: LuUser },
     { id: "projects", label: "projects", Icon: IoCodeSlash },
     { id: "uiux", label: "ui/ux ", Icon: LuFigma },
     { id: "contact", label: "contact", Icon: LuMail },

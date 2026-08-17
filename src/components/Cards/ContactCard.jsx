@@ -47,7 +47,7 @@ function ContactCard() {
     }
   };
   return (
-    <div className=" flex flex-col gap-6">
+    <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
         <h2 className="text-xl font-bold">Let's Connect!</h2>
         <p className="text-body text-sm leading-relaxed">
@@ -127,7 +127,7 @@ function ContactCard() {
 
         <button
           type="submit"
-          className="text-primary border-primary hover:bg-primary/10 lg:text-md flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border bg-black p-2 text-xs font-extrabold"
+          className="text-primary border-primary hover:bg-primary/10 lg: flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border bg-black p-2 text-xs font-extrabold"
         >
           {state.submitting ? "Sending..." : "Send Message"} <LuSend />
         </button>
