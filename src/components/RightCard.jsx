@@ -33,11 +33,11 @@ function RightCard({ activeTab }) {
         </InfoContainer>
 
         {/* UI / UX DESIGN */}
-        <InfoContainer visible={activeTab === "uiux"}>
+        {/* <InfoContainer visible={activeTab === "uiux"}>
           <div id="uiux" className="text-title flex scroll-mt-35 flex-col">
             <SectionTitle>ui/ux design</SectionTitle>
           </div>
-        </InfoContainer>
+        </InfoContainer> */}
 
         {/* CONTACT */}
         <InfoContainer visible={activeTab === "contact"}>

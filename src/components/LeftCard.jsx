@@ -1,14 +1,15 @@
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-
+import bgIcon from "../assets/bg-left-card.png";
 function LeftCard({ activeTab, setActiveTab }) {
   return (
-    <div
-      className="bg-surface mt-10 flex w-full flex-col overflow-hidden bg-cover bg-no-repeat pt-70 shadow-[-6px_-6px_2px_4px_color-mix(in_srgb,var(--color-primary)_20%,transparent)] drop-shadow-2xl sm:mt-3 md:h-150 lg:w-7/12"
-      style={{
-        backgroundImage: "')",
-      }}
-    >
+    <div className="mt-10 flex w-full flex-col overflow-hidden bg-cover bg-no-repeat pt-70 shadow-[-6px_-6px_2px_4px_color-mix(in_srgb,var(--color-primary)_20%,transparent)] drop-shadow-2xl sm:mt-3 md:h-150 lg:w-7/12">
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat blur-[2px]"
+        style={{
+          backgroundImage: `url(${bgIcon})`,
+        }}
+      />
       {/* Profile info */}
       <div className="relative flex flex-1 flex-col items-center rounded-t-2xl bg-black px-6 pb-8 shadow-[-6px_-8px_10px_4px_color-mix(in_srgb,var(--color-black)_40%,transparent)]">
         <div className="-mt-16 mb-4 md:-mt-20">
@@ -57,7 +58,7 @@ function LeftCard({ activeTab, setActiveTab }) {
       </div>
 
       {/* Contact */}
-      <div className="border-brand-gradient text-primary flex items-center border-t bg-black">
+      <div className="border-brand-gradient text-primary z-20 flex items-center border-t bg-black">
         <button
           onClick={() => {
             setActiveTab("contact");
