@@ -2,6 +2,7 @@ import nailsMobile from "../../assets/tales-of-nails-mobile.png";
 import nailsDesktop from "../../assets/tales-of-nails-desktop.png";
 import clientTracker1 from "../../assets/client-tracker-1.png";
 import clientTracker2 from "../../assets/client-tracker-2.png";
+import clientTracker3 from "../../assets/client-tracker-3.png";
 import { FaReact, FaGithub } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 
@@ -28,8 +29,9 @@ function ProjectsCard() {
       description:
         "A client management app for service businesses. It stores data locally in the browser to track appointments and revenue, providing a clean dashboard for daily organization.",
       images: [
+          { src: clientTracker2, alt: "client tracker project", width: "w-1/3" },
         { src: clientTracker1, alt: "client tracker project", width: "w-1/3" },
-        { src: clientTracker2, alt: "client tracker project", width: "w-1/3" },
+        { src: clientTracker3, alt: "client tracker project", width: "w-1/3" },
       ],
       liveUrl: "https://clienttrackerapp.netlify.app/",
       techStack: [
@@ -46,7 +48,7 @@ function ProjectsCard() {
         ({ title, description, images, liveUrl, techStack, githubUrl }) => (
           <div
             key={title}
-            className="border-gray-border bg-surface flex flex-col gap-4 rounded-xl border p-6"
+            className="border-gray-border bg-surface flex flex-col gap-4 rounded-xl border p-3"
           >
             <div className="flex flex-col justify-between md:flex-row md:items-center">
               <h3 className="text-title text-lg font-semibold">{title}</h3>
