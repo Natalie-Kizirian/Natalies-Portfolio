@@ -2,7 +2,7 @@ import SectionTitle from "../SectionTitle";
 function AboutCard() {
   const infoRows = [
     { label: "ROLE", value: "Junior Front-end Developer" },
-    { label: "EDUCATION", value: "IT Applications — Web Design & Development" },
+    { label: "EDUCATION", value: "Web Design & Development" },
     { label: "AVAILABILITY", value: "Open to opportunities" },
     { label: "LANGUAGES", value: "Greek / English" },
     { label: "LOCATION", value: "Athens, Greece" },
@@ -20,7 +20,7 @@ function AboutCard() {
               Hello! I’m Natalie Kizirian.
             </p>
             <p className="text-body font-medium">
-              I'm an IT student focusing on Front-end Development, based in
+              I'm a student focusing on Front-end Development, based in
               Athens and looking for opportunities to grow and work in an
               international team. I enjoy building clean and responsive
               websites. When I'm not coding, you'll find me exploring new UI/UX

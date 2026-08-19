@@ -29,9 +29,9 @@ function ProjectsCard() {
       description:
         "A client management app for service businesses. It stores data locally in the browser to track appointments and revenue, providing a clean dashboard for daily organization.",
       images: [
-          { src: clientTracker2, alt: "client tracker project", width: "w-1/3" },
-        { src: clientTracker1, alt: "client tracker project", width: "w-1/3" },
-        { src: clientTracker3, alt: "client tracker project", width: "w-1/3" },
+        { src: clientTracker1, alt: "client tracker project", width: "w-full" },
+        { src: clientTracker2, alt: "client tracker project", width: "w-full" },
+        { src: clientTracker3, alt: "client tracker project", width: "w-full" },
       ],
       liveUrl: "https://clienttrackerapp.netlify.app/",
       techStack: [
@@ -84,7 +84,7 @@ function ProjectsCard() {
             <p className="text-body leading-relaxed">{description}</p>
 
             {/* Images */}
-            <div className="flex w-full justify-center gap-2 overflow-hidden">
+            <div className="[&::-webkit-scrollbar-thumb]:bg-gray-border pb-1 flex w-full gap-2 overflow-hidden overflow-x-scroll [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
               {images.map(({ src, alt, width }) => (
                 <img
                   src={src}

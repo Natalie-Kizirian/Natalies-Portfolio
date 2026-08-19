@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import bgIcon from "../assets/bg-left-card.png";
 function LeftCard({ activeTab, setActiveTab }) {
   return (
-    <div className="mt-10 flex w-full flex-col overflow-hidden bg-cover bg-no-repeat pt-70 shadow-[-6px_-6px_2px_4px_color-mix(in_srgb,var(--color-primary)_20%,transparent)] drop-shadow-2xl sm:mt-3 md:h-150 lg:w-7/12">
+    <div className="mt-32  flex w-full flex-col overflow-hidden bg-cover bg-no-repeat pt-70 shadow-[-6px_-6px_2px_4px_color-mix(in_srgb,var(--color-primary)_20%,transparent)] drop-shadow-2xl sm:mt-3 md:h-150 lg:w-7/12">
       <div
         className="absolute inset-0 z-0 bg-cover bg-no-repeat blur-[2px]"
         style={{

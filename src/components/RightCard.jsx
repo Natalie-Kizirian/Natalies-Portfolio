@@ -8,14 +8,13 @@ import SectionTitle from "./SectionTitle";
 function RightCard({ activeTab }) {
   return (
     <>
-      <div className="mt-4 flex w-full flex-col gap-4 lg:mt-0 lg:h-145 lg:gap-0">
+      <div className="mt-4 flex w-full flex-col gap-8 lg:mt-0 lg:h-145 lg:gap-0">
         {/* ABOUT */}
         <InfoContainer visible={activeTab === "about"}>
           <div className="text-title flex scroll-mt-35 flex-col" id="about">
             <AboutCard />
           </div>
         </InfoContainer>
-        
 
         {/* SKILLS */}
         <InfoContainer visible={activeTab === "skills"}>

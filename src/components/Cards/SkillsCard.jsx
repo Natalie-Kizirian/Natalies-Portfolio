@@ -14,12 +14,12 @@ function SkillsCard() {
     },
     {
       title: "DESIGN",
-      skills: ["FIGMA", "RESPONSIVE DESIGN", "UI/UX DESIGN"],
+      skills: ["RESPONSIVE DESIGN", "UI/UX DESIGN"],
       Icon: LuFigma,
     },
     {
       title: "TOOLS",
-      skills: ["GIT & GITHUB", "VS CODE"],
+      skills: ["GIT & GITHUB", "VS CODE", "VITE", "FIGMA"],
       Icon: GoTools,
     },
     {
@@ -34,7 +34,7 @@ function SkillsCard() {
       <SectionTitle>skills</SectionTitle>
 
       {/* SKILLS */}
-      <div className="flex grid-cols-2 flex-col gap-5 md:grid">
+      <div className="flex flex-col gap-5 ">
         {skillCategories.map(({ title, skills, Icon }) => (
           <div key={title} className="w-full space-y-1">
             <div className="bg-surface border-gray-border rounded-lg border p-2">
@@ -52,21 +52,6 @@ function SkillsCard() {
           </div>
         ))}
       </div>
-
-      {/* FOCUS */}
-      {/* <div className="mt-5">
-        <h2 className="text-xl font-bold">What I Focus On</h2>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="space-y-1 p-3">
-            <p className="text-xsm font-semibold">Web Development</p>
-            <p className="">Building responsive single-page applications and clean component structures with React, JavaScript and Tailwind CSS.</p>
-          </div>
-          <div className="space-y-1 p-3">
-            <p className="text-sm font-semibold">UI/UX Implementation</p>
-            <p className=" ">Translating Figma designs and wireframes into maintainable code, focusing on local state handling and user-friendly interfaces.</p>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }
