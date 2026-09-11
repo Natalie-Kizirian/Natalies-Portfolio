@@ -24,7 +24,7 @@ function SkillsCard() {
     },
     {
       title: "IN PROGRESS",
-      skills: ["TYPESCRIPT"],
+      skills: ["TYPESCRIPT" , "NEXT"],
       Icon: GiProgression,
     },
   ];
